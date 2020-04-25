@@ -1,0 +1,12 @@
+.posts{
+
+}
+.item{
+    color: red;
+    font-style: unset;
+    font-weight: bold;
+}
+.item img {
+    width: 50px;
+    border-radius: 30px;
+}
