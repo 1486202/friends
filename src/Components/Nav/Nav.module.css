@@ -1,9 +1,18 @@
 .nav {
     grid-area: n;
     background-color: lightpink;
+    padding: 10px;
 }
-.item {
+
+.item a {
     color: white;
+    font-weight: bolder;
+    font-style: unsete;
+    text-decoration: none;
+}
+
+.item a.active {
+    color: red;
     font-weight: bolder;
     font-style: unsete;
 }
