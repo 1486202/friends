@@ -3,8 +3,9 @@ import s from './Content.module.css';
 import MyPosts from "./MyPosts/MyPosts";
 
 const Content = () => {
-    return <div>
+    return <div className={s.content}>
         <div className={s.contentimg}>
+            <img src='https://ic.pics.livejournal.com/krugom_eda/81684038/22701/22701_original.jpg'/>
             <img src='https://ic.pics.livejournal.com/krugom_eda/81684038/22701/22701_original.jpg'/>
         </div>
         <div className={s.ava}>

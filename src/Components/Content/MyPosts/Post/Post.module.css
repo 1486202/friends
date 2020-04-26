@@ -5,6 +5,7 @@
     color: red;
     font-style: unset;
     font-weight: bold;
+    padding: 10px;
 }
 .item img {
     width: 50px;
