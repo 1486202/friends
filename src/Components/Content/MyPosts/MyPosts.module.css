@@ -1,9 +1,31 @@
 
-.posts{
+.posts {
     font-weight: bold;
 
 }
-.MyPosts{
+
+.MyPosts {
     font-weight: bold;
     padding: 10px;
+}
+
+button {
+    color: black;
+    /*background-color: red;*/
+    font-weight: bold;
+    padding: 3px 7px;
+    border-radius: 7px;
+    background: -moz-linear-gradient(#e6e7e8, #e9e9ea, #bec0c2);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#e6e7e8), to(#bec0c2), color-stop(0.5, #e9e9ea));
+    border: 2px inset #f0f0f0;
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00BBD6', endColorstr='#EBFFFF');*/
+
+}
+
+textarea {
+    border-radius: 7px;
+    resize: none;
+    background: -moz-linear-gradient(#e6e7e8, #e9e9ea, #bec0c2);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#e6e7e8), to(#bec0c2), color-stop(0.5, #e9e9ea));
+    border: 2px inset #f0f0f0;
 }

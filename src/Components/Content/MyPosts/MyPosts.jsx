@@ -7,8 +7,10 @@ const MyPosts = () => {
         <div className={s.MyPosts}>
             My posts
             <div>
-                <textarea></textarea>
-                <button>Add post</button>
+                <textarea autoFocus cols="40" placeholder={'Write your text...'}/>
+                <div>
+                    <button>Add post</button>
+                </div>
             </div>
         </div>
         <div className={s.posts}>
@@ -16,7 +18,7 @@ const MyPosts = () => {
             <Post message='How many glasses of wine can you drink?' like=" 169"/>
         </div>
     </div>
-        }
+}
 
 
-        export default MyPosts;
+export default MyPosts;
