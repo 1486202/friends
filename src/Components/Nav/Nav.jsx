@@ -3,16 +3,16 @@ import s from './Nav.module.css';
 const Nav = () => {
     return <nav className={s.nav}>
         <div className={s.item}>
-            <a>First glass</a>
+            <a href="/content">Profile</a>
         </div>
         <div className={s.item}>
-            <a>Second glass</a>
+            <a href="/dialogs">Dialogs</a>
         </div>
         <div className={s.item}>
-            <a>Third glass</a>
+            <a href="/first">First glass</a>
         </div>
         <div className={s.item}>
-            <a>Fourth and more</a>
+            <a href="/fourth">Fourth and more</a>
         </div>
     </nav>
 }
