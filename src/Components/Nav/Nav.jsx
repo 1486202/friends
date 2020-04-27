@@ -14,7 +14,7 @@ const Nav = () => {
         <div className={s.item}>
             <NavLink to="/first" activeClassName={s.active}>First glass</NavLink>
         </div>
-        <div className={s.item}>
+        <div className={s.item2}>
             <NavLink to="/fourth" activeClassName={s.active}>Fourth and more</NavLink>
         </div>
     </nav>)

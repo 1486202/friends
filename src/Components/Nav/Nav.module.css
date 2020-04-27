@@ -6,13 +6,37 @@
 
 .item a {
     color: white;
-    font-weight: bolder;
-    font-style: unsete;
+    /*font-weight: bolder;*/
+    /*font-style: unsete;*/
     text-decoration: none;
+    font-family:Consolas ;
+    font-size: medium;
+
 }
 
 .item a.active {
     color: red;
     font-weight: bolder;
-    font-style: unsete;
+    font-family: "Comic Sans MS";
+    font-size: x-large;
+
+
+}
+.item2 a {
+    color: white;
+    /*font-weight: bolder;*/
+    /*font-style: unsete;*/
+    text-decoration: none;
+    font-family:Consolas ;
+    font-size: medium;
+
+}
+
+.item2 a.active {
+    color: red;
+    font-weight: bolder;
+    font-family: "Arial Black";
+    font-size: xx-large;
+
+
 }
