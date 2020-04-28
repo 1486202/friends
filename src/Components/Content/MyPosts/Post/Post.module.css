@@ -3,11 +3,15 @@
 }
 .item{
     color: red;
-    font-style: unset;
-    font-weight: bold;
+    /*font-style: unset;*/
+    /*font-weight: bold;*/
     padding: 10px;
+    font-family:Roboto ;
 }
 .item img {
     width: 50px;
     border-radius: 30px;
+}
+.likes{
+    color: black;
 }
