@@ -1,12 +1,13 @@
 
 .posts {
-    font-weight: bold;
+    /*font-weight: bold;*/
 
 }
 
 .MyPosts {
-    font-weight: bold;
-    padding: 10px;
+    /*font-weight: bold;*/
+    padding: 5px;
+    font-family: Roboto;
 
 
 }
@@ -21,6 +22,7 @@ button {
     background: -webkit-gradient(linear, 0 0, 0 100%, from(#e6e7e8), to(#bec0c2), color-stop(0.5, #e9e9ea));
     border: 2px inset #f0f0f0;
     /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00BBD6', endColorstr='#EBFFFF');*/
+    font-family: Roboto;
 
 }
 
@@ -30,4 +32,5 @@ textarea {
     background: -moz-linear-gradient(#e6e7e8, #e9e9ea, #bec0c2);
     background: -webkit-gradient(linear, 0 0, 0 100%, from(#e6e7e8), to(#bec0c2), color-stop(0.5, #e9e9ea));
     border: 2px inset #f0f0f0;
+    font-family: Roboto;
 }

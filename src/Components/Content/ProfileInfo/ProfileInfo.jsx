@@ -11,7 +11,13 @@ const ProfileInfo = () => {
 
         </div>
         <div className={s.ava}>
-            ava
+            <img src='https://sun9-63.userapi.com/c629215/v629215417/32249/XJC2AUxnH1s.jpg?ava=1'/>
+            <div>
+                Irina Anufrienko
+                <div>
+                    Hello! Welcome to my page.
+                </div>
+            </div>
         </div>
     </div>
 }

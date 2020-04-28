@@ -1,8 +1,13 @@
 .contentimg img {
-    height: 230px;
+    height: 233px;
     /*padding: 50px;*/
 }
 .ava{
     padding: 10px;
+    font-family: Roboto;
 
+}
+.ava img{
+    height: 70px;
+    border-radius: 30px;
 }
