@@ -5,6 +5,11 @@ import Post from "./Post/Post";
 
 const MyPosts = (props) => {
     let PostElements = props.posts.map(p => <Post message={p.message} like={p.like}/>);
+    let newPostElement = React.createRef();
+    let addPost = () => {
+        let text = newPostElement.current.value;
+        alert(text);
+    }
 
     return <div className={s.MyPosts}>
 
@@ -13,9 +18,9 @@ const MyPosts = (props) => {
                 <p>My posts</p>
             </div>
             <div>
-                <textarea autoFocus cols="40" placeholder={'Write your text...'}/>
+                <textarea ref={newPostElement} autoFocus cols="40" placeholder={'Write your text...'}/>
                 <div>
-                    <button>Add post</button>
+                    <button onClick={addPost}>Add post</button>
                 </div>
             </div>
         </div>

@@ -1,7 +1,16 @@
 .dialogs {
     display: grid;
-    grid-template-columns: 2fr 10fr;
+    margin: 0 auto;
+    grid-template-columns: 1fr 8fr ;
     background-color: gray;
+    grid-template-areas: "d d d";
+}
+.dialogsItems{
+    display: grid;
+    margin: 0 auto;
+    /*grid-template-columns: 3fr;*/
+    background-color: gray;
+    /*grid-template-areas: "d d d";*/
 }
 
 .dialogsItems a {
@@ -15,16 +24,49 @@
 .dialogsItems a.active {
     color: black;
     font-weight: bolder;
-}
 
+
+}
 .dialog a {
     text-decoration: none;
+
 }
 
 .messages {
     padding: 10px;
 }
 
-.message {
+/*.message {*/
+/*    display: block;*/
+/*}*/
+.message a {
+display: block;
+}
+.dialog img{
+    width: 50px;
+    border-radius: 30px;
+    height: 50px;
+    padding: 5px;
+}
+button {
+    color: black;
+    /*background-color: red;*/
+    font-weight: bold;
+    padding: 3px 7px;
+    border-radius: 7px;
+    background: -moz-linear-gradient(#e6e7e8, #e9e9ea, #bec0c2);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#e6e7e8), to(#bec0c2), color-stop(0.5, #e9e9ea));
+    border: 2px inset #f0f0f0;
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00BBD6', endColorstr='#EBFFFF');*/
+    font-family: Roboto;
 
+}
+
+textarea {
+    border-radius: 7px;
+    resize: none;
+    background: -moz-linear-gradient(#e6e7e8, #e9e9ea, #bec0c2);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#e6e7e8), to(#bec0c2), color-stop(0.5, #e9e9ea));
+    border: 2px inset #f0f0f0;
+    font-family: Roboto;
 }
