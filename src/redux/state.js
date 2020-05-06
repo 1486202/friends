@@ -1,3 +1,5 @@
+import {rerenderEntireTree} from "../render";
+
 let state = {
 
     profilePage: {
@@ -12,9 +14,9 @@ let state = {
     dialogsPage:
         {
             messages: [
-                {id: 1,  message: 'Hi,princess!'},
-                {id: 2,  message: 'How are you?'},
-                {id: 3,  message: 'I want to you.'},
+                {id: 1, message: 'Hi,princess!'},
+                {id: 2, message: 'How are you?'},
+                {id: 3, message: 'I want to you.'},
             ],
             dialogs: [
                 {id: 1, name: 'Aivaz', img: 'https://2.allegroimg.com/s1440/03c3f8/2983b9964b22a4f19d9fc9389502'},
@@ -41,7 +43,7 @@ let state = {
                 {id: 6, name: 'Lena', img: 'https://image.freepik.com/free-photo/l_23-2148185100.jpg'},
             ]
         },
-    friendsNav:{
+    friendsNav: {
         friends: [
             {id: 1, name: 'Aivaz', img: 'https://2.allegroimg.com/s1440/03c3f8/2983b9964b22a4f19d9fc9389502'},
             {
@@ -58,6 +60,14 @@ let state = {
 
         ]
     }
-
+}
+export let addPost = (postMessage) => {
+    let newPost = {
+        id: 5,
+        message: postMessage,
+        like: 1
+    }
+    state.profilePage.posts.push(newPost);
+    rerenderEntireTree(state);
 }
 export default state;

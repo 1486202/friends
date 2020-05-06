@@ -7,6 +7,7 @@ import Dialogs from "./Components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
 import First from "./Components/First/First";
 import Fourth from "./Components/Fourth/Fourth";
+import {addPost} from "./redux/state";
 
 
 const App = (props) => {
@@ -15,11 +16,12 @@ const App = (props) => {
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
-                <Nav state ={props.state.friendsNav}/>
+                <Nav state={props.state.friendsNav}/>
                 <div className='app-wrapper-content'>
 
-                    <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage} />}/>
-                    <Route path='/content' render={() => <Content state={props.state.profilePage}/>}/>
+                    <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage}/>}/>
+                    <Route path='/content'
+                           render={() => <Content state={props.state.profilePage} addPost={props.addPost}/>}/>
                     <Route path='/first' render={() => <First/>}/>
                     <Route path='/fourth' render={() => <Fourth/>}/>
                 </div>
