@@ -14,23 +14,22 @@ const Dialogs = (props) => {
 
     let newMessageElement = React.createRef();
     let newMessage = () => {
-        let text = newMessageElement.current.value;
-        alert(text);
+        props.addMessage();
     }
+    let onDialogChange = () => {
+        let text = newMessageElement.current.value;
+        props.updateNewDialogText(text);
+    };
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-                {/*<DialogItem name={dialogsData[0].name} id={dialogsData[0].id}/>*/}
-                {/*<DialogItem name="Lena" id="6"/>*/}
                 {dialogsElements}
 
             </div>
             <div className={s.message}>
-                {/*<Message message={messagesData[0].message} id={messagesData[0].id}/>*/}
-                {/*<Message message="I want to you."/>*/}
                 {messagesElements}
                 <div>
-                    <textarea ref={newMessageElement} autoFocus cols="40" placeholder={'Add your message...'}/>
+                    <textarea onChange={onDialogChange} value={props.newDialogText} ref={newMessageElement} autoFocus cols="40" placeholder={'Add your message...'}/>
                     <div>
                         <button onClick={newMessage}>Add message</button>
                     </div>

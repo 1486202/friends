@@ -19,6 +19,7 @@ let state = {
                 {id: 2, message: 'How are you?'},
                 {id: 3, message: 'I want to you.'},
             ],
+            newDialogText: 'Mmmm',
             dialogs: [
                 {id: 1, name: 'Aivaz', img: 'https://2.allegroimg.com/s1440/03c3f8/2983b9964b22a4f19d9fc9389502'},
                 {
@@ -74,6 +75,19 @@ export let addPost = () => {
 }
 export let updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+}
+export let addMessage = () => {
+    let newMessage = {
+        id: 5,
+        message: state.dialogsPage.newDialogText,
+    }
+    state.dialogsPage.messages.push(newMessage);
+    state.dialogsPage.newDialogText='';
+    rerenderEntireTree(state);
+}
+export let updateNewDialogText = (newText) => {
+    state.dialogsPage.newDialogText = newText;
     rerenderEntireTree(state);
 }
 export default state;
