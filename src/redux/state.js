@@ -1,4 +1,6 @@
-import {rerenderEntireTree} from "../render";
+let rerenderEntireTree = () =>{
+    console.log('State changed')
+};
 
 let state = {
 
@@ -19,7 +21,7 @@ let state = {
                 {id: 2, message: 'How are you?'},
                 {id: 3, message: 'I want to you.'},
             ],
-            newDialogText: 'Mmmm',
+            newDialogText: '',
             dialogs: [
                 {id: 1, name: 'Aivaz', img: 'https://2.allegroimg.com/s1440/03c3f8/2983b9964b22a4f19d9fc9389502'},
                 {
@@ -89,5 +91,8 @@ export let addMessage = () => {
 export let updateNewDialogText = (newText) => {
     state.dialogsPage.newDialogText = newText;
     rerenderEntireTree(state);
+}
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer;
 }
 export default state;
