@@ -29,14 +29,17 @@ const Dialogs = (props) => {
                 {messagesElements}
             </div>
             <div>
+                <div>
                 <textarea onChange={onDialogChange} ref={newMessageElement} autoFocus cols="40"
                           placeholder={'Add your message...'} value={props.state.newDialogText}/>
-                <div>
-                    <button onClick={newMessage}>Add message</button>
+                    <div>
+                        <button onClick={newMessage}>Add message</button>
+                    </div>
                 </div>
             </div>
-        </div>)
-}
+        </div>
+            )
+            }
 
 
-export default Dialogs;
+            export default Dialogs;

@@ -11,10 +11,7 @@ let store = {
                 {id: 2, message: 'How many glasses of wine can you drink?', like: 10}
             ],
             newPostText: ''
-
-        }
-        ,
-
+        },
         dialogsPage:
             {
                 messages: [
@@ -85,10 +82,12 @@ let store = {
             this._state.profilePage.posts.push(newPost);
             this._state.profilePage.newPostText = '';
             this._callSubscriber(this._state);
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+        }
+        else if (action.type === 'UPDATE-NEW-POST-TEXT') {
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber(this._state);
-        } else if (action.type === 'ADD-MESSAGE') {
+        }
+        else if (action.type === 'ADD-MESSAGE') {
             let newMessage = {
                 id: 5,
                 message: this._state.dialogsPage.newDialogText,
@@ -109,3 +108,6 @@ export const addMessageActionCreator = () => ({type: ADD_MESSAGE});
 export const updateNewDialogActionCreator = (text) => ({type: UPDATE_NEW_DIALOG_TEXT, newText: text});
 
 export default store;
+
+
+
