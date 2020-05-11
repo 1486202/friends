@@ -1,3 +1,7 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const ADD_MESSAGE = 'ADD-MESSAGE';
+const UPDATE_NEW_DIALOG_TEXT = 'UPDATE-NEW-DIALOG-TEXT';
 let store = {
     _state: {
 
@@ -62,42 +66,46 @@ let store = {
             ]
         }
     },
-    getState() {
-        return this._state;
-    },
     _callSubscriber() {
         console.log('State changed')
     },
-    addPost() {
-        let newPost = {
-            id: 5,
-            message: this._state.profilePage.newPostText,
-            like: 1
-        }
-        this._state.profilePage.posts.push(newPost);
-        this._state.profilePage.newPostText='';
-        this._callSubscriber(this._state);
-    },
-    updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber(this._state);
-    },
-    addMessage()  {
-        let newMessage = {
-            id: 5,
-            message: this._state.dialogsPage.newDialogText,
-        }
-        this._state.dialogsPage.messages.push(newMessage);
-        this._state.dialogsPage.newDialogText='';
-        this._callSubscriber(this._state);
-    },
-    updateNewDialogText(newText) {
-        this._state.dialogsPage.newDialogText = newText;
-        this._callSubscriber(this._state);
+    getState() {
+        return this._state;
     },
     subscribe(observer) {
         this._callSubscriber = observer;
+    },
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            let newPost = {
+                id: 5,
+                message: this._state.profilePage.newPostText,
+                like: 1
+            };
+            this._state.profilePage.posts.push(newPost);
+            this._state.profilePage.newPostText = '';
+            this._callSubscriber(this._state);
+        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+            this._state.profilePage.newPostText = action.newText;
+            this._callSubscriber(this._state);
+        } else if (action.type === 'ADD-MESSAGE') {
+            let newMessage = {
+                id: 5,
+                message: this._state.dialogsPage.newDialogText,
+            };
+            this._state.dialogsPage.messages.push(newMessage);
+            this._state.dialogsPage.newDialogText = '';
+            this._callSubscriber(this._state);
+        } else if (action.type === 'UPDATE-NEW-DIALOG-TEXT') {
+            this._state.dialogsPage.newDialogText = action.newText;
+            this._callSubscriber(this._state);
+        }
     }
+
 };
+export const addPostActionCreator = () => ({type: ADD_POST});
+export const updateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text});
+export const addMessageActionCreator = () => ({type: ADD_MESSAGE});
+export const updateNewDialogActionCreator = (text) => ({type: UPDATE_NEW_DIALOG_TEXT, newText: text});
 
 export default store;
