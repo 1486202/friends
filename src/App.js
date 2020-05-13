@@ -7,21 +7,20 @@ import Dialogs from "./Components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
 import First from "./Components/First/First";
 import Fourth from "./Components/Fourth/Fourth";
+import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 
 
 
 const App = (props) => {
-
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
                 <Nav state={props.state.friendsNav}/>
                 <div className='app-wrapper-content'>
-
-                    <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage} dispatch={props.dispatch}/>}/>
+                    <Route path='/dialogs' render={() => <DialogsContainer store = {props.store}/>}/>
                     <Route path='/content'
-                           render={() => <Content profilePage={props.state.profilePage} dispatch={props.dispatch}/>}/>
+                           render={() => <Content store = {props.store}/>}/>
                     <Route path='/first' render={() => <First/>}/>
                     <Route path='/fourth' render={() => <Fourth/>}/>
                 </div>
