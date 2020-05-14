@@ -7,13 +7,14 @@ import {Route} from "react-router-dom";
 import First from "./Components/First/First";
 import Fourth from "./Components/Fourth/Fourth";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
+import NavContainer from "./Components/Nav/NavContainer";
 
 
 const App = () => {
     return (
         <div className='app-wrapper'>
             <Header/>
-            <Nav/>
+            <NavContainer/>
             <div className='app-wrapper-content'>
                 <Route path='/dialogs' render={() => <DialogsContainer/>}/>
                 <Route path='/content' render={() => <Content/>}/>
