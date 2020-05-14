@@ -3,29 +3,25 @@ import './App.css';
 import Header from "./Components/Header/Header";
 import Nav from "./Components/Nav/Nav";
 import Content from "./Components/Content/Content";
-import Dialogs from "./Components/Dialogs/Dialogs";
-import {BrowserRouter, Route} from "react-router-dom";
+import {Route} from "react-router-dom";
 import First from "./Components/First/First";
 import Fourth from "./Components/Fourth/Fourth";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 
 
-
-const App = (props) => {
+const App = () => {
     return (
-        <BrowserRouter>
-            <div className='app-wrapper'>
-                <Header/>
-                <Nav state={props.state.friendsNav}/>
-                <div className='app-wrapper-content'>
-                    <Route path='/dialogs' render={() => <DialogsContainer store = {props.store}/>}/>
-                    <Route path='/content'
-                           render={() => <Content store = {props.store}/>}/>
-                    <Route path='/first' render={() => <First/>}/>
-                    <Route path='/fourth' render={() => <Fourth/>}/>
-                </div>
+        <div className='app-wrapper'>
+            <Header/>
+            <Nav/>
+            <div className='app-wrapper-content'>
+                <Route path='/dialogs' render={() => <DialogsContainer/>}/>
+                <Route path='/content' render={() => <Content/>}/>
+                <Route path='/first' render={() => <First/>}/>
+                <Route path='/fourth' render={() => <Fourth/>}/>
             </div>
-        </BrowserRouter>)
+        </div>
+    )
 
 };
 

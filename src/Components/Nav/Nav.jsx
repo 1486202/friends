@@ -1,18 +1,18 @@
 import React from 'react';
 import s from './Nav.module.css';
 import {NavLink} from "react-router-dom";
-import Dialogs from "../Dialogs/Dialogs";
-import DialogItem from "../Dialogs/DialogItem/DialogItem";
+import StoreContext from "../../StoreContext";
 
-const Friends = (props) => {
-    return <div className={s.friends}>{props.name}
-        <img src={props.img}/></div>
-
-};
-const Nav = (props) => {
-
-    let friendsElements = props.state.friends.map(f => <Friends name={f.name} id={f.id} img={f.img}/>);
-
+// const Friends = (props) => {
+//     return <div className={s.friends}>{props.name}
+//         <img src={props.img}/></div>
+// };
+const Nav = () => {
+    // return (
+    //     <StoreContext.Consumer>
+    //         {(store) => {
+    //             let friendsElements = store.getState().friends.map(f => <Friends name={f.name} id={f.id}
+    //                                                                              img={f.img}/>);
     return (
         <nav className={s.nav}>
             <div className={s.item}>
@@ -30,10 +30,10 @@ const Nav = (props) => {
             <div className={s.friends2}>
                 Friends
             </div>
-
-            {friendsElements}
-
-
+            {/*{friendsElements}*/}
         </nav>)
 }
+// }
+// </StoreContext.Consumer>)
+// }
 export default Nav;

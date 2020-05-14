@@ -15,7 +15,7 @@ let initialState = {
 
     ]
 }
-const friendsNavReducer = (state = initialState , action) => {
+const friendsNavReducer = (state = initialState) => {
     return state;
 };
 export default friendsNavReducer;
