@@ -31,24 +31,31 @@ let initialState = {
         },
         {id: 6, name: 'Lena', img: 'https://image.freepik.com/free-photo/l_23-2148185100.jpg'},
     ]
-}
-const dialogReducer = (state = initialState , action) => {
+};
+const dialogReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_MESSAGE:
+        case ADD_MESSAGE: {
             let newMessage = {
                 id: 5,
                 message: state.newDialogText,
             };
-            state.messages.push(newMessage);
-            state.newDialogText = '';
-            return state;
-        case UPDATE_NEW_DIALOG_TEXT:
-            state.newDialogText = action.newText;
-            return state;
+            let stateCopy = {...state};
+            stateCopy.messages = [...stateCopy.messages];
+            stateCopy.messages.push(newMessage);
+            stateCopy.newDialogText = '';
+            return stateCopy;
+        }
+
+        case UPDATE_NEW_DIALOG_TEXT: {
+            let stateCopy = {...state};
+            stateCopy.newDialogText = action.newText;
+            return stateCopy;
+        }
+
         default:
             return state;
     }
-}
+};
 export const addMessageActionCreator = () => ({type: ADD_MESSAGE});
 export const updateNewDialogActionCreator = (text) => ({type: UPDATE_NEW_DIALOG_TEXT, newText: text});
 export default dialogReducer;
