@@ -17,24 +17,27 @@ const Dialogs = (props) => {
     };
     return (
         <div className={s.dialogs}>
+
             <div className={s.dialogsItems}>
                 {dialogsElements}
             </div>
-            <div className={s.message}>
-                {messagesElements}
-            </div>
             <div>
                 <div>
-                <textarea onChange={onDialogChange}  autoFocus cols="40"
-                          placeholder={'Add your message...'} value={newMessageElement}/>
-                    <div>
-                        <button onClick={newMessage}>Add message</button>
-                    </div>
-                </div>
+            <div className={s.message}>
+                {messagesElements}
+
             </div>
+            </div>
+            <div>
+                <textarea onChange={onDialogChange} autoFocus cols="40"
+                          placeholder={'Add your message...'} value={newMessageElement}/>
+                    <button onClick={newMessage}>Add message</button>
+            </div>
+            </div>
+
         </div>
-            )
-            }
+    )
+}
 
 
-            export default Dialogs;
+export default Dialogs;
