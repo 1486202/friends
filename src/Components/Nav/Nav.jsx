@@ -9,7 +9,7 @@ const Friends = (props) => {
 };
 const Nav = (props) => {
     let state = props.friendsNav;
-    let friendsElements = state.friends.map(f => <Friends name={f.name} id={f.id} img={f.img}/>);
+    let friendsElements = state.friends.map(f => <Friends name={f.name} key={f.id} id={f.id} img={f.img}/>);
     return (
         <nav className={s.nav}>
             <div className={s.item}>
