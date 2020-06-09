@@ -1,8 +1,12 @@
 import React from 'react';
 import s from './ProfileInfo.module.css';
+import Preloader from "../../Common/Preloader/Preloader";
 
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+    if (!props.profile) {
+        return <Preloader/>
+    }
     return <div>
         <div className={s.contentimg}>
             <img src='https://www.iphones.ru/wp-content/uploads/2018/07/8b6507b32fa55ae82ba5315510bc0f93-1240x630.jpg'/>
@@ -12,6 +16,7 @@ const ProfileInfo = () => {
         </div>
         <div className={s.ava}>
             <img src='https://sun9-63.userapi.com/c629215/v629215417/32249/XJC2AUxnH1s.jpg?ava=1'/>
+            <img src={props.profile.photos.large}/>
             <div>
                 Irina Anufrienko
                 <div>
